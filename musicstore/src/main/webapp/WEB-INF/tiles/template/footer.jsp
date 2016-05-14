@@ -1,0 +1,1 @@
+<p>&copy; Winyl 2016</p>
