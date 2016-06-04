@@ -1,13 +1,15 @@
-package com.packt.musicstore.service.implementation;
+package com.packt.musicstore.service.impl;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.packt.musicstore.dao.ProductDao;
-import com.packt.musicstore.domain.Product;
+import com.packt.musicstore.model.Product;
 import com.packt.musicstore.service.ProductService;
 
+@Service
 public class ProductServiceImpl implements ProductService{
 
 	@Autowired
