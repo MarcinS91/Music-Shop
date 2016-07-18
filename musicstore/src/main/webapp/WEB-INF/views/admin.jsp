@@ -1,35 +1,39 @@
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ include file="/WEB-INF/tiles/template/navigation.jsp"%>
 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet"
+	href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 <div class="container-wrapper">
 	<div class="container">
 		<div class="page-header">
-			<h1>Administrator page</h1>
+			<h1>Administrator</h1>
 
-			<p class="lead">This is the administrator page!</p>
+			<p class="lead">Panel administracyjny</p>
 		</div>
+	
 
-		<c:if test="${pageContext.request.userPrincipal.name != null}">
-			<h2>
-				Welcome: ${pageContext.request.userPrincipal.name} | <a
-					href="<c:url value="/j_spring_security_logout"/>">Logout</a>
-			</h2>
+<c:if test="${pageContext.request.userPrincipal.name != null}">
+	<h2>
+		Welcome: ${pageContext.request.userPrincipal.name} | <a
+			href="<c:url value="/j_spring_security_logout"/>">Wyloguj</a>
+	</h2>
 
-		</c:if>
+</c:if>
 
-		<h3>
-			<a href="<c:url value="/admin/productInventory" /> ">Product
-				Inventory</a>
-		</h3>
+<h3>
+	<a href="<c:url value="/admin/productInventory" /> ">Zarządzanie produktami</a>
+</h3>
 
-		<p>Here you can view, check and modify the product inventory!</p>
 
-		<br />
-		<br />
 
-		<h3>
-			<a href="<c:url value="/admin/customer" /> ">Customer Management</a>
-		</h3>
+<br />
+<br />
 
-		<p>Here you can view the customer information!</p>
+<h3>
+	<a href="<c:url value="/admin/customer" /> ">Zarządzanie użytkownikami</a>
+</h3>
+
