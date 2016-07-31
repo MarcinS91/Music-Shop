@@ -1,4 +1,4 @@
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -7,6 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet"
 	href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+	
 <div class="container-wrapper">
 	<div class="container">
 		<div class="page-header">
@@ -18,7 +19,7 @@
 
 <c:if test="${pageContext.request.userPrincipal.name != null}">
 	<h2>
-		Welcome: ${pageContext.request.userPrincipal.name} | <a
+		 ${pageContext.request.userPrincipal.name} | <a
 			href="<c:url value="/j_spring_security_logout"/>">Wyloguj</a>
 	</h2>
 
