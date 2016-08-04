@@ -2,39 +2,28 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
-<script>
-	$(document).ready(
-			function() {
-				var searchCondition = '${searchCondition}';
-				$('.table').DataTable(
-						{
-							"lengthMenu" : [ [ 1, 2, 3, 5, 10, -1 ],
-									[ 1, 2, 3, 5, 10, "All" ] ],
-							"oSearch" : {
-								"sSearch" : searchCondition
-							}
-						});
-			});
-</script>
+<%@ include file="/WEB-INF/tiles/template/navigation.jsp"%>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet"
+	href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 
 <div class="container-wrapper">
 	<div class="container">
 		<div class="page-header">
-			<h1>All Products</h1>
+			<h1>Produkty</h1>
 
-			<p class="lead">Checkout all the awesome products available now!</p>
-		</div>
-	</div>
+			<p class="lead">Sprawdż produkty oferowane przez nasz sklep!</p>
+		
+	
 </div>
 <table class="table table-striped table-hover">
 	<thead>
 		<tr class="bg-success">
-			<th>Proto Thumb</th>
-			<th>Product Name</th>
-			<th>Category</th>
-			<th>Condition</th>
-			<th>Price</th>
+			<th>Zdjęcie okładki</th>
+			<th>Nazwa wykonawcy</th>
+			<th>Nazwa albumu</th>
+			<th>Kategoria</th>
+			<th>Cena</th>
 			<th></th>
 		</tr>
 	</thead>
@@ -44,9 +33,9 @@
 				src="<c:url value="/resources/images/${product.productId}.png" />"
 				alt="image" style="width: 100%" /></td>
 			<td>${product.productName}</td>
+			<td>${product.title}</td>
 			<td>${product.productCategory}</td>
-			<td>${product.productCondition}</td>
-			<td>${product.productPrice}USD</td>
+			<td>${product.productPrice} PLN</td>
 			<td><a
 				href="<spring:url value="/product/viewProduct/${product.productId}" />"><span
 					class="glyphicon glyphicon-info-sign"></span></a></td>
