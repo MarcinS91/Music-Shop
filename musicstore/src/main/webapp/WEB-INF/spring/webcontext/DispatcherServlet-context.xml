@@ -12,7 +12,7 @@
 
 
 
-	<context:component-scan base-package="com.packt.musicstore" />
+	<context:component-scan base-package="com.packt.store" />
 
 	<mvc:annotation-driven>
 		<mvc:argument-resolvers>
