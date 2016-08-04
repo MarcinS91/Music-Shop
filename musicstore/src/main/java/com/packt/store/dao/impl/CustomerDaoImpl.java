@@ -1,4 +1,4 @@
-package com.packt.musicstore.dao.impl;
+package com.packt.store.dao.impl;
 
 import java.util.List;
 
@@ -9,11 +9,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.packt.musicstore.dao.CustomerDao;
-import com.packt.musicstore.model.Authorities;
-import com.packt.musicstore.model.Cart;
-import com.packt.musicstore.model.Customer;
-import com.packt.musicstore.model.Users;
+import com.packt.store.dao.CustomerDao;
+import com.packt.store.model.Authorities;
+import com.packt.store.model.Cart;
+import com.packt.store.model.Customer;
+import com.packt.store.model.Users;
 
 @Repository
 @Transactional
