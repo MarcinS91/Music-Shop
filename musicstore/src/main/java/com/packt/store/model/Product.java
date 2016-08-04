@@ -1,18 +1,22 @@
-package com.packt.musicstore.model;
+package com.packt.store.model;
 
 import java.io.Serializable;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Transient;
 import javax.validation.constraints.Min;
 
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.web.multipart.MultipartFile;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Product implements Serializable {
@@ -20,26 +24,32 @@ public class Product implements Serializable {
 	private static final long serialVersionUID = -3532377236419382983L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int productId;
 
-	@NotEmpty(message = "Nazwa produktu nie mo¿e pozostaæ pusta!")
+	@NotEmpty(message = "Nazwa wykonawcy nie mo¿e pozostaæ pusta!")
 	private String productName;
 
+	@NotEmpty(message = "Nazwa albumu nie mo¿e pozostaæ pusta!")
+	private String title;
 	private String productCategory;
 	private String productDescription;
+	private String dataCarrier;
+	private String year;
 
 	@Min(value = 0, message = "Cena produktu powinna byæ wiêksza od zera")
 	private double productPrice;
-	private String productCondition;
 	private String productStatus;
 
 	@Min(value = 0, message = "Ilosc sztuk nie moze byc mniejsza od zera!")
 	private int unitInStock;
-	private String productManufacturer;
 
 	@Transient
 	private MultipartFile productImage;
+
+	@OneToMany(mappedBy = "product", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@JsonIgnore
+	private List<CartItem> cartItemList;
 
 	public int getProductId() {
 		return productId;
@@ -105,22 +115,36 @@ public class Product implements Serializable {
 		this.productImage = productImage;
 	}
 
-	public String getProductCondition() {
-		return productCondition;
+	public List<CartItem> getCartItemList() {
+		return cartItemList;
 	}
 
-	public void setProductCondition(String productCondition) {
-		this.productCondition = productCondition;
+	public void setCartItemList(List<CartItem> cartItemList) {
+		this.cartItemList = cartItemList;
 	}
 
-	public String getProductManufacturer() {
-		return productManufacturer;
+	public String getTitle() {
+		return title;
 	}
 
-	public void setProductManufacturer(String productManufacturer) {
-		this.productManufacturer = productManufacturer;
+	public void setTitle(String title) {
+		this.title = title;
 	}
-	
-	
+
+	public String getDataCarrier() {
+		return dataCarrier;
+	}
+
+	public void setDataCarrier(String dataCarrier) {
+		this.dataCarrier = dataCarrier;
+	}
+
+	public String getYear() {
+		return year;
+	}
+
+	public void setYear(String year) {
+		this.year = year;
+	}
 
 }
