@@ -1,4 +1,4 @@
-package com.packt.musicstore.admin;
+package com.packt.store.admin;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -12,8 +12,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.packt.musicstore.model.Customer;
-import com.packt.musicstore.service.CustomerService;
+import com.packt.store.model.Customer;
+import com.packt.store.service.CustomerService;
 
 @Controller
 @RequestMapping("/admin")
