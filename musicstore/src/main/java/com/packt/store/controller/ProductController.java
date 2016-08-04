@@ -1,4 +1,4 @@
-package com.packt.musicstore.controller;
+package com.packt.store.controller;
 
 import java.io.IOException;
 import java.util.List;
@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.packt.musicstore.model.Product;
-import com.packt.musicstore.service.ProductService;
+import com.packt.store.model.Product;
+import com.packt.store.service.ProductService;
 
 @Controller
 @RequestMapping("/product")
@@ -36,12 +36,5 @@ public class ProductController {
 		return "viewProduct";
 	}
 	
-	@RequestMapping("/productList")
-	public String getProductByCategory(@RequestParam("searchCondition") String searchCondition, Model model) {
-		List<Product> products = productService.getProductList();
-		model.addAttribute("products", products);
-		model.addAttribute(searchCondition, searchCondition);
-		
-		return "productList";
-	}
+	
 }
