@@ -1,8 +1,68 @@
 <%@page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!-- Angular.JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
+</head>
+<!-- NAVBAR
+================================================== -->
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet"	href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+<body>
+	<div class="navbar-wrapper">
+		<div class="container">
 
-<li><a href="<spring:url value="/products"/>">Strona główna</a></li>
-<li><a href="<spring:url value="/products/"/>">Produkty</a></li>
-<li><a href="<spring:url value="/products/add"/>">Dodaj produkt</a></li>
-<li><a href="<spring:url value="/cart/"/>">Koszyk</a></li>
-<li><a href="<spring:url value="/cart/"/>">Admin</a></li>
+			<nav class="navbar navbar-inverse navbar-static-top">
+				<div class="container">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed"
+							data-toggle="collapse" data-target="#navbar"
+							aria-expanded="false" aria-controls="navbar">
+							<span class="sr-only">Toggle navigation</span> <span
+								class="icon-bar"></span> <span class="icon-bar"></span> <span
+								class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="#">Winyl</a>
+					</div>
+					<div id="navbar" class="navbar-collapse collapse">
+						<ul class="nav navbar-nav">
+							<li><a href="<spring:url value="/"/>">Strona
+									główna</a></li>
+							<li><a href="<spring:url value="/product/productList/all"/>">Produkty</a></li>
+							<li><a href="<spring:url value="/customer/cart"/>">Koszyk</a></li>
+							
+							
+							
+						</ul>
+						<ul class="nav navbar-nav pull-right">
+							<c:if test="${pageContext.request.userPrincipal.name != null}">
+								<li><a>Witaj: ${pageContext.request.userPrincipal.name}</a></li>
+								<li><a href="<c:url value="/j_spring_security_logout" />">Wyloguj</a></li>
+
+								<c:if
+									test="${pageContext.request.userPrincipal.name != 'admin'}">
+									<li><a href="<c:url value="/customer/cart" />">Koszyk</a></li>
+								</c:if>
+
+								<c:if
+									test="${pageContext.request.userPrincipal.name == 'admin'}">
+									<li><a href="<c:url value="/admin" />">Admin</a></li>
+								</c:if>
+
+							</c:if>
+
+							<c:if test="${pageContext.request.userPrincipal.name == null}">
+								<li><a href="<c:url value="/login" />">Logowanie</a></li>
+								<li><a href="<c:url value="/register" />">Rejestracja</a></li>
+								<li><a href="<c:url value="/admin"/>">Admin</a></li>
+							
+							</c:if>
+						</ul>
+					</div>
+				</div>
+			</nav>
+
+		</div>
+	</div>
