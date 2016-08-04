@@ -1,4 +1,4 @@
-package com.packt.musicstore.controller;
+package com.packt.store.controller;
 
 import java.util.List;
 
@@ -12,10 +12,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.packt.musicstore.model.BillingAddress;
-import com.packt.musicstore.model.Customer;
-import com.packt.musicstore.model.ShippingAddress;
-import com.packt.musicstore.service.CustomerService;
+import com.packt.store.model.BillingAddress;
+import com.packt.store.model.Customer;
+import com.packt.store.model.ShippingAddress;
+import com.packt.store.service.CustomerService;
 
 @Controller
 public class RegisterController {
