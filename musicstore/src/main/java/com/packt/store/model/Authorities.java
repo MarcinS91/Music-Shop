@@ -1,9 +1,11 @@
-package com.packt.musicstore.model;
+package com.packt.store.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Authorities {
@@ -13,6 +15,8 @@ public class Authorities {
 	private int authoritiesId;
 	private String username;
 	private String authority;
+	
+	
 
 	public int getAuthoritiesId() {
 		return authoritiesId;
