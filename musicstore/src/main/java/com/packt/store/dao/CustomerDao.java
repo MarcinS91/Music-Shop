@@ -1,8 +1,8 @@
-package com.packt.musicstore.dao;
+package com.packt.store.dao;
 
 import java.util.List;
 
-import com.packt.musicstore.model.Customer;
+import com.packt.store.model.Customer;
 
 public interface CustomerDao {
 
