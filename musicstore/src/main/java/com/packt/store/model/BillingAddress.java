@@ -1,4 +1,4 @@
-package com.packt.musicstore.model;
+package com.packt.store.model;
 
 import java.io.Serializable;
 
