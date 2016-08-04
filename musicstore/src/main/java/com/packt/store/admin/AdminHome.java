@@ -1,4 +1,4 @@
-package com.packt.musicstore.admin;
+package com.packt.store.admin;
 
 import java.util.List;
 
@@ -7,8 +7,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.packt.musicstore.model.Product;
-import com.packt.musicstore.service.ProductService;
+import com.packt.store.model.Customer;
+import com.packt.store.model.Product;
+import com.packt.store.service.CustomerService;
+import com.packt.store.service.ProductService;
 
 @Controller
 @RequestMapping("/admin")
@@ -17,7 +19,10 @@ public class AdminHome {
 	@Autowired
 	private ProductService productService;
 
-	@RequestMapping("/admin")
+	@Autowired
+	private CustomerService customerService;
+
+	@RequestMapping
 	public String adminPage() {
 		return "admin";
 	}
@@ -30,8 +35,11 @@ public class AdminHome {
 		return "productsInventory";
 	}
 
-	@RequestMapping
+	@RequestMapping("/customer")
 	public String customerManagement(Model model) {
+		List<Customer> customerList = customerService.getAllCustomers();
+		model.addAttribute("customerList", customerList);
+		
 		return "customerManagement";
 	}
 
