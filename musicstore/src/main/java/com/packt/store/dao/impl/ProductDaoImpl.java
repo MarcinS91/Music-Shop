@@ -1,4 +1,4 @@
-package com.packt.musicstore.dao.impl;
+package com.packt.store.dao.impl;
 
 import java.util.List;
 
@@ -9,14 +9,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.packt.musicstore.dao.ProductDao;
-import com.packt.musicstore.model.Product;
+import com.packt.store.dao.ProductDao;
+import com.packt.store.model.Product;
 
 @Repository
 @Transactional
 public class ProductDaoImpl implements ProductDao {
 
-	@Autowired(required = true)
+	@Autowired
 	private SessionFactory sessionFactory;
 
 	public void addProduct(Product product) {
