@@ -30,7 +30,7 @@
 		</property>
 		<property name="packagesToScan">
 			<list>
-				<value>com.packt.musicstore</value>
+				<value>com.packt.store</value>
 			</list>
 		</property>
 	</bean>
