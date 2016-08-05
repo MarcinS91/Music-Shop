@@ -1,5 +1,5 @@
 # Music-Shop
-Repository1
+
 My first web application, inspired by book (Spring MVC by Amuthan G.). Online store with function of registration,login and administration. Admin panel contains customer's management(delete customer) and product's managements (edit, delete).
 
 Enviorement:
