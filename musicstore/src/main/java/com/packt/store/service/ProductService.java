@@ -1,8 +1,8 @@
-package com.packt.musicstore.service;
+package com.packt.store.service;
 
 import java.util.List;
 
-import com.packt.musicstore.model.Product;
+import com.packt.store.model.Product;
 
 public interface ProductService {
 	
