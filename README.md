@@ -1,6 +1,6 @@
 # Music-Shop
 
-My first web application, inspired by book (Spring MVC by Amuthan G.). Online store with function of registration,login and administration. Admin panel contains customer's management(delete customer) and product's managements (edit, delete).
+My first web application, inspired by book (Spring MVC by Amuthan G.). Online store with function of registration,login and administration. Admin panel contains customer's management(delete customer) and product's management (edit, delete).
 
 Enviorement:
 Windows 7, Spring Tool Suite, JDK 1.8
